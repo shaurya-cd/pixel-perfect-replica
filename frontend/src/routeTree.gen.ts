@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AchievementsRouteImport } from './routes/achievements'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
+import { Route as MissionsRouteImport } from './routes/missions'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ResultRouteImport } from './routes/result'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TutorialRouteImport } from './routes/tutorial'
+import { Route as PlayIndexRouteImport } from './routes/play.index'
+import { Route as PlayMissionIdRouteImport } from './routes/play.$missionId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AchievementsRoute = AchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissionsRoute = MissionsRouteImport.update({
+  id: '/missions',
+  path: '/missions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultRoute = ResultRouteImport.update({
+  id: '/result',
+  path: '/result',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TutorialRoute = TutorialRouteImport.update({
+  id: '/tutorial',
+  path: '/tutorial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayIndexRoute = PlayIndexRouteImport.update({
+  id: '/play/',
+  path: '/play/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayMissionIdRoute = PlayMissionIdRouteImport.update({
+  id: '/play/$missionId',
+  path: '/play/$missionId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/achievements': typeof AchievementsRoute
+  '/dashboard': typeof DashboardRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/missions': typeof MissionsRoute
+  '/profile': typeof ProfileRoute
+  '/result': typeof ResultRoute
+  '/settings': typeof SettingsRoute
+  '/tutorial': typeof TutorialRoute
+  '/play/$missionId': typeof PlayMissionIdRoute
+  '/play/': typeof PlayIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/achievements': typeof AchievementsRoute
+  '/dashboard': typeof DashboardRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/missions': typeof MissionsRoute
+  '/profile': typeof ProfileRoute
+  '/result': typeof ResultRoute
+  '/settings': typeof SettingsRoute
+  '/tutorial': typeof TutorialRoute
+  '/play/$missionId': typeof PlayMissionIdRoute
+  '/play': typeof PlayIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/achievements': typeof AchievementsRoute
+  '/dashboard': typeof DashboardRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/missions': typeof MissionsRoute
+  '/profile': typeof ProfileRoute
+  '/result': typeof ResultRoute
+  '/settings': typeof SettingsRoute
+  '/tutorial': typeof TutorialRoute
+  '/play/$missionId': typeof PlayMissionIdRoute
+  '/play/': typeof PlayIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/achievements'
+    | '/dashboard'
+    | '/leaderboard'
+    | '/missions'
+    | '/profile'
+    | '/result'
+    | '/settings'
+    | '/tutorial'
+    | '/play/$missionId'
+    | '/play/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/achievements'
+    | '/dashboard'
+    | '/leaderboard'
+    | '/missions'
+    | '/profile'
+    | '/result'
+    | '/settings'
+    | '/tutorial'
+    | '/play/$missionId'
+    | '/play'
+  id:
+    | '__root__'
+    | '/'
+    | '/achievements'
+    | '/dashboard'
+    | '/leaderboard'
+    | '/missions'
+    | '/profile'
+    | '/result'
+    | '/settings'
+    | '/tutorial'
+    | '/play/$missionId'
+    | '/play/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AchievementsRoute: typeof AchievementsRoute
+  DashboardRoute: typeof DashboardRoute
+  LeaderboardRoute: typeof LeaderboardRoute
+  MissionsRoute: typeof MissionsRoute
+  ProfileRoute: typeof ProfileRoute
+  ResultRoute: typeof ResultRoute
+  SettingsRoute: typeof SettingsRoute
+  TutorialRoute: typeof TutorialRoute
+  PlayMissionIdRoute: typeof PlayMissionIdRoute
+  PlayIndexRoute: typeof PlayIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +182,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/achievements': {
+      id: '/achievements'
+      path: '/achievements'
+      fullPath: '/achievements'
+      preLoaderRoute: typeof AchievementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missions': {
+      id: '/missions'
+      path: '/missions'
+      fullPath: '/missions'
+      preLoaderRoute: typeof MissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/result': {
+      id: '/result'
+      path: '/result'
+      fullPath: '/result'
+      preLoaderRoute: typeof ResultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tutorial': {
+      id: '/tutorial'
+      path: '/tutorial'
+      fullPath: '/tutorial'
+      preLoaderRoute: typeof TutorialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/': {
+      id: '/play/'
+      path: '/play'
+      fullPath: '/play/'
+      preLoaderRoute: typeof PlayIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/$missionId': {
+      id: '/play/$missionId'
+      path: '/play/$missionId'
+      fullPath: '/play/$missionId'
+      preLoaderRoute: typeof PlayMissionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AchievementsRoute: AchievementsRoute,
+  DashboardRoute: DashboardRoute,
+  LeaderboardRoute: LeaderboardRoute,
+  MissionsRoute: MissionsRoute,
+  ProfileRoute: ProfileRoute,
+  ResultRoute: ResultRoute,
+  SettingsRoute: SettingsRoute,
+  TutorialRoute: TutorialRoute,
+  PlayMissionIdRoute: PlayMissionIdRoute,
+  PlayIndexRoute: PlayIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
